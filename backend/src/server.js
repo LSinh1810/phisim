@@ -97,12 +97,12 @@ app.get("/api/email-config", (req, res) => {
 app.use("/api/campaigns", campaignRoutes);
 app.use("/api/track", trackRoutes);
 
-// Serve frontend build
-const frontendPath = path.join(__dirname, "../frontend/dist");
-app.use(express.static(frontendPath));
-app.get("/.*/", (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
-});
+// // Serve frontend build
+// const frontendPath = path.join(__dirname, "../frontend/dist");
+// app.use(express.static(frontendPath));
+// app.get("/.*/", (req, res) => {
+//   res.sendFile(path.join(frontendPath, "index.html"));
+// });
 
 // Connect DB & start server
 connectDB().then(() => {
