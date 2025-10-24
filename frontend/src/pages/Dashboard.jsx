@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import useCampaignStore from '../store/useCampaignStore';
 import api from '../api/axios';
 import CampaignCard from '../components/CampaignCard';
+import { Link } from 'react-router-dom';
 
 export default function Dashboard() {
   const { campaigns, fetchCampaigns, loading, error } = useCampaignStore();
@@ -112,9 +113,9 @@ export default function Dashboard() {
               </div>
               <h3 className="text-lg font-medium text-white mb-2">Không tìm thấy chiến dịch nào</h3>
               <p className="text-gray-400 mb-4">Tạo chiến dịch mô phỏng tấn công phishing đầu tiên để bắt đầu.</p>
-              <a href="/create" className="btn btn-primary">
+              <Link to="/create" className="btn btn-primary">
                 Tạo chiến dịch
-              </a>
+              </Link>
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">

@@ -55,6 +55,7 @@ export const createCampaign = async (req, res) => {
         const result = await transporter.sendMail(mailOptions);
         emailResults.push({ email, status: 'success', messageId: result.messageId });
         console.log(`Email sent successfully to ${email}:`, result.messageId);
+        setTimeout(() => {}, 5000); // Thêm độ trễ nhỏ để tránh gửi quá nhanh
       } catch (emailError) {
         console.error(`Failed to send email to ${email}:`, emailError);
         emailResults.push({ email, status: 'failed', error: emailError.message });
